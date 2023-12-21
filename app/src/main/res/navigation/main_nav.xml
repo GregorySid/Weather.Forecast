@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/frag_one">
+    <fragment
+        android:id="@+id/frag_one"
+        android:name="com.example.wea23.Frag_one"
+        tools:layout="@layout/fragment_one" >
+        <action
+            android:id="@+id/action_frag_one_to_frag_two"
+            app:destination="@id/frag_two"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/frag_two"
+        android:name="com.example.wea23.Frag_two"
+        tools:layout="@layout/fragment_two" >
+        <action
+            android:id="@+id/action_frag_two_to_frag_one"
+            app:destination="@id/frag_one"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+</navigation>

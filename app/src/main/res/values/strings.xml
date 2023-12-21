@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Wea23</string>
+    <string name="temp">%.0f℃</string>
+    <string name="rain_p">%.0f%%</string>
+    <string name="wind_p">%.0f km/h</string>
+    <string name="error_text"> Something went wrong</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
