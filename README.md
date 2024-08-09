@@ -7,7 +7,6 @@
 - **JetPack:**
   - **Lifecycle** - dispose observing data when lifecycle state changes.
   - **ViewModel** - UI related data holder, lifecycle aware.
-  - **Room Persistence** - construct database.
 - **Architecture:**
   - **MVVM Architecture** (View - DataBinding - ViewModel - Model)
   - **Bindables** - Android DataBinding kit for notifying data changes to UI layers.
