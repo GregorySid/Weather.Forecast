@@ -12,7 +12,8 @@
   - **MVVM Architecture** (View - DataBinding - ViewModel - Model)
   - **Bindables** - Android DataBinding kit for notifying data changes to UI layers.
   - **Repository pattern**
-- **Material Design**
+- **Material Design & Animations:**
+  - **Picasso** - for some UI
 - **Retrofit2 & Gson** - constructing the REST API
 - **OkHttp3** - implementing interceptor, logging and mocking web server
 - **API Google Play Maps** - to work with maps and location
