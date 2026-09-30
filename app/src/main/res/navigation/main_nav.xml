@@ -17,8 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/frag_two"
-        android:name="com.example.wea23.Frag_two"
-        tools:layout="@layout/fragment_two" >
+        android:name="com.example.wea23.Frag_two" >
         <action
             android:id="@+id/action_frag_two_to_frag_one"
             app:destination="@id/frag_one"
