@@ -18,9 +18,11 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -171,6 +173,13 @@ private fun CitySearchField(onSearch: (String) -> Unit) {
         modifier = Modifier.fillMaxWidth(),
         placeholder = { Text("Search city", color = TextWhite.copy(alpha = 0.5f)) },
         leadingIcon = { Icon(Icons.Default.Search, contentDescription = null, tint = TextWhite) },
+        trailingIcon = {
+            if (query.isNotEmpty()) {
+                IconButton(onClick = { query = "" }) {
+                    Icon(Icons.Default.Close, contentDescription = "Clear", tint = TextWhite)
+                }
+            }
+        },
         singleLine = true,
         textStyle = TextStyle(color = TextWhite),
         keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
