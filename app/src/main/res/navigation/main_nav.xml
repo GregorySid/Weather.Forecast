@@ -6,8 +6,7 @@
     app:startDestination="@id/frag_one">
     <fragment
         android:id="@+id/frag_one"
-        android:name="com.example.wea23.Frag_one"
-        tools:layout="@layout/fragment_one" >
+        android:name="com.example.wea23.Frag_one" >
         <action
             android:id="@+id/action_frag_one_to_frag_two"
             app:destination="@id/frag_two"
