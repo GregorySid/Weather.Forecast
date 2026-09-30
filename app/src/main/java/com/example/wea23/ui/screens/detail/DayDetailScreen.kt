@@ -142,7 +142,7 @@ private fun SummaryCard(day: ForecastOneDay) {
         MetricsRow(
             rain = day.day.rain,
             wind = day.day.wind,
-            humidityText = "${day.day.wind}%"
+            humidityText = String.format("%.0f%%", day.day.humidity)
         )
     }
 }
