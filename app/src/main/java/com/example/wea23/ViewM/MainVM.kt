@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.wea23.BuildConfig
 import com.example.wea23.ViewST.Data
 import com.example.wea23.ViewST.Error
 import com.example.wea23.ViewST.Loading
@@ -15,7 +16,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
-private const val API_KEY = "9432eca1dec64dbfb1a154703231308"
 private const val CITY_NAME = "Moscow"
 
 class MainVM(
@@ -32,7 +32,7 @@ class MainVM(
         _viewState.value = Loading
         viewModelScope.launch {
             try {
-                val weather = api.getWeatherData(API_KEY, city, "3", "no", "no")
+                val weather = api.getWeatherData(BuildConfig.WEATHER_API_KEY, city, "3", "no", "no")
                 _viewState.value = Data(weather)
             } catch (e: Exception) {
                 _viewState.value = Error
