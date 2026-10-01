@@ -1,12 +1,14 @@
 package com.example.wea23.ViewM
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.wea23.ViewST.Data
 import com.example.wea23.ViewST.Error
 import com.example.wea23.ViewST.Loading
 import com.example.wea23.ViewST.MainVSt
+import com.example.wea23.data_model.ForecastOneDay
 import com.example.wea23.network.WeatherApiCreator
 import com.example.wea23.network.MainApi
 import kotlinx.coroutines.flow.Flow
@@ -19,17 +21,18 @@ private const val CITY_NAME = "Moscow"
 class MainVM(
     private val api: MainApi = WeatherApiCreator.getApi()) : ViewModel() {
     private val _viewState = MutableStateFlow<MainVSt>(Loading)
+    val m: MutableLiveData<ForecastOneDay> by lazy {
+        MutableLiveData<ForecastOneDay>()
+    }
     val viewState: Flow<MainVSt> get() = _viewState
-
     init {
         loadWeather(CITY_NAME)
     }
-
     fun loadWeather(city: String) {
         _viewState.value = Loading
         viewModelScope.launch {
             try {
-                val weather = api.getWeatherData(API_KEY, city,"3", "no", "no")
+                val weather = api.getWeatherData(API_KEY, city, "3", "no", "no")
                 _viewState.value = Data(weather)
             } catch (e: Exception) {
                 _viewState.value = Error
